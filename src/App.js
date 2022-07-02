@@ -2,10 +2,32 @@ import './App.css';
 import axios from 'axios';
 import {useState} from 'react'
 function App() {
-  // const url = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m"
+  const[data,setData]=useState({});
+  // const[location,setLocation] = useState('');
+  const [latitude, setLatitude]=useState(0);
+  const [longitude,setLongitute]=useState(0);
+  const [temperature,setTemperatue]=useState(0);
+  const url = "https://api.open-meteo.com/v1/forecast?latitude=${}&longitude={}&hourly={}"
+  const searchLocation = (event) =>{
+    if (event.key==='Enter') {
+      axios.get(url).then((response)=>{
+        setData(response.data)
+        console.log(response.data)
+
+      })
+    }
+  }
   return (
     <div className="App">
   <h4>Hey Cytonn This is yout Weather application</h4>
+  <div className='search'>
+    <input value={latitude} onChange={event=>setLatitude(event.target.value)}
+    onKeyPress={searchLocation} placeholder='Enter latitude' type="text"></input>
+  </div>
+  <div className='search'>
+    <input value={longitude} onChange={event=>setLongitute(event.target.value)}
+    onKeyPress={searchLocation} placeholder='Enter longitude' type="text"></input>
+  </div>
   <div className='Container'>
     <div className='row'>
       <div className='loc'>
