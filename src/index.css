@@ -9,7 +9,7 @@ body {
 
   
 }
-.App{
+.weather{
   background: url('/public/images/wet3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,9 +20,8 @@ body {
   left: 0;
   z-index: -1;
 }
-.App .bottom{
-  display: flex;
-  justify-content: space-evenly;
+.weather .bottom{
+  
   text-align: center;
   width: 100%;
   margin: 1rem auto;
@@ -31,7 +30,50 @@ body {
   background-color:rgba(0,0,0,0.5);
 }
 
+.weather.search{
+  text-align: center;
+  padding: 1rem;
 
+}
+.weather input{
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+::placeholder{
+  color: black;
+}
+.weather .wind li{
+  align-items: center;
+  display: inline;
+}
+.weather .temp{
+  border: 1px solid black;
+  border-radius: 10px ;
+  width: 200px;
+}
+.temp li{
+  display: block;
+  flex-direction: column-reverse;
+}
+.app .search{
+  text-align: center;
+  padding: 1 rem;
+
+}
+.app input{
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  border: 1px solid black;
+  margin: 3rem;
+}
+.app .cweather{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: large;
+  font-weight: bolder;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
