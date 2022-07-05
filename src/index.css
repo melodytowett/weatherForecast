@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('/public/images/wet1.webp');
+  background: url('/public/images/wea1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 200vh;
@@ -106,6 +106,10 @@ td, th {
   border: 2px solid #0c0c0c;
   text-align: left;
   padding: 8px;
+}
+th{
+  color: white;
+  font-size: larger;
 }
 tr:nth-child(even) {
   background-color: #dddddd;

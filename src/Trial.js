@@ -31,7 +31,7 @@ function Trial(){
         Temperature: {data.current_weather? <p>{data.current_weather.temperature}°C</p>:null}
         </div>
         <div className="wspeed">
-        WindSpeed: {data.current_weather? <p>{data.current_weather.windspeed} KMPH</p> :null}
+        WindSpeed: {data.hourly? <p>{data.hourly.windspeed_120m[0]} KMPH</p> :null}
         </div>
         <div className="cloud">
           CloudCover: {data.hourly? <p>{data.hourly.cloudcover_mid[0]}%</p>:null}
@@ -64,56 +64,118 @@ function Trial(){
               <td> {data.hourly? <p>{data.hourly.temperature_2m[6]}°C</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.cloudcover_mid[6]}%</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[6]}%</p>:null} </td>
-              <td>{data.current_weather? <p>{data.current_weather.windspeed[6]} KMPH</p> :null}</td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[6]} KMPH</p> :null}</td>
             </tr>
             <tr>
               <td>{data.hourly? <p>{data.hourly.time[7]}</p>:null}</td>
               <td> {data.hourly? <p>{data.hourly.temperature_2m[7]}°C</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.cloudcover_mid[7]}%</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[7]}%</p>:null} </td>
-              <td>{data.current_weather? <p>{data.current_weather.windspeed[7]} KMPH</p> :null}</td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[7]} KMPH</p> :null}</td>
             </tr>
             <tr>
               <td>{data.hourly? <p>{data.hourly.time[8]}</p>:null}</td>
               <td> {data.hourly? <p>{data.hourly.temperature_2m[8]}°C</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.cloudcover_mid[8]}%</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[8]}%</p>:null} </td>
-              <td>{data.current_weather? <p>{data.current_weather.windspeed[8]} KMPH</p> :null}</td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[8]} KMPH</p> :null}</td>
             </tr>
             <tr>
               <td>{data.hourly? <p>{data.hourly.time[9]}</p>:null}</td>
               <td> {data.hourly? <p>{data.hourly.temperature_2m[9]}°C</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.cloudcover_mid[9]}%</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[9]}%</p>:null} </td>
-              <td>{data.current_weather? <p>{data.current_weather.windspeed[8]} KMPH</p> :null}</td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[9]} KMPH</p> :null}</td>
             </tr>
             <tr>
               <td>{data.hourly? <p>{data.hourly.time[10]}</p>:null}</td>
               <td> {data.hourly? <p>{data.hourly.temperature_2m[10]}°C</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.cloudcover_mid[10]}%</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[10]}%</p>:null} </td>
-              <td>{data.current_weather? <p>{data.current_weather.windspeed[10]} KMPH</p> :null}</td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[10]} KMPH</p> :null}</td>
             </tr>
             <tr>
               <td>{data.hourly? <p>{data.hourly.time[11]}</p>:null}</td>
               <td> {data.hourly? <p>{data.hourly.temperature_2m[11]}°C</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.cloudcover_mid[11]}%</p>:null}</td>
               <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[11]}%</p>:null} </td>
-              <td>{data.current_weather? <p>{data.current_weather.windspeed[11]} KMPH</p> :null}</td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[11]} KMPH</p> :null}</td>
             </tr>
             </tbody>
           </table>
-        {data.hourly? <p>{data.hourly.time[11]}</p>:null} 
+    
         </div>
         <div className="eve">
           <h2>Weather from Evening</h2>
-        {data.hourly? <p>{data.hourly.time[12]}</p>:null} 
-        {data.hourly? <p>{data.hourly.time[13]}</p>:null} 
-        {data.hourly? <p>{data.hourly.time[14]}</p>:null} 
-        {data.hourly? <p>{data.hourly.time[15]}</p>:null} 
-        {data.hourly? <p>{data.hourly.time[16]}</p>:null} 
-        {data.hourly? <p>{data.hourly.time[17]}</p>:null} 
-        {data.hourly? <p>{data.hourly.time[18]}</p>:null}
+          <table>
+            <thead>
+            <tr>
+              <th>
+                Time
+              </th>
+              <th>Temperature</th>
+              <th>CloudCover</th>
+              <th>Humidity</th>
+              <th>WindSpeed</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>
+              {data.hourly? <p>{data.hourly.time[12]}</p>:null}
+              </td>
+              <td> {data.hourly? <p>{data.hourly.temperature_2m[12]}°C</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.cloudcover_mid[12]}%</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[12]}%</p>:null} </td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[12]} KMPH</p> :null}</td>
+            </tr>
+            <tr>
+              <td>
+              {data.hourly? <p>{data.hourly.time[13]}</p>:null}
+              </td>
+              <td> {data.hourly? <p>{data.hourly.temperature_2m[13]}°C</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.cloudcover_mid[13]}%</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[13]}%</p>:null} </td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[13]} KMPH</p> :null}</td>
+            </tr>
+            <tr>
+              <td>{data.hourly? <p>{data.hourly.time[14]}</p>:null}</td>
+              <td> {data.hourly? <p>{data.hourly.temperature_2m[14]}°C</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.cloudcover_mid[14]}%</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[14]}%</p>:null} </td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[14]} KMPH</p> :null}</td>
+            </tr>
+            <tr>
+              <td>{data.hourly? <p>{data.hourly.time[15]}</p>:null}</td>
+              <td> {data.hourly? <p>{data.hourly.temperature_2m[15]}°C</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.cloudcover_mid[15]}%</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[15]}%</p>:null} </td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[14]} KMPH</p> :null}</td>
+            </tr>
+            <tr>
+              <td>{data.hourly? <p>{data.hourly.time[16]}</p>:null}</td>
+              <td> {data.hourly? <p>{data.hourly.temperature_2m[16]}°C</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.cloudcover_mid[16]}%</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[16]}%</p>:null} </td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[16]} KMPH</p> :null}</td>
+            </tr>
+            <tr>
+              <td>{data.hourly? <p>{data.hourly.time[17]}</p>:null}</td>
+              <td> {data.hourly? <p>{data.hourly.temperature_2m[17]}°C</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.cloudcover_mid[17]}%</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[17]}%</p>:null} </td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[17]} KMPH</p> :null}</td>
+            </tr>
+            <tr>
+              <td>{data.hourly? <p>{data.hourly.time[18]}</p>:null}</td>
+              <td> {data.hourly? <p>{data.hourly.temperature_2m[18]}°C</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.cloudcover_mid[18]}%</p>:null}</td>
+              <td>{data.hourly? <p>{data.hourly.relativehumidity_2m[18]}%</p>:null} </td>
+              <td>{data.hourly? <p>{data.hourly.windspeed_120m[18]} KMPH</p> :null}</td>
+            </tr>
+            </tbody>
+          </table>
+    
         </div>  
 
       </div>
